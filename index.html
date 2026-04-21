@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PocketID - Secure Identity & Document Wallet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #14B8A6;
+            --accent: #2DD4BF;
+            --bg: #030712;
+            --card: #111827;
+            --text-main: #F9FAFB;
+            --text-muted: #9CA3AF;
+            --glass: rgba(17, 24, 39, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% -20%, #112240 0%, #030712 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        nav {
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        .nav-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 32px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 150px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 40px;
+            box-shadow: 0 40px 100px rgba(20, 184, 166, 0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            background: var(--primary);
+            filter: blur(120px);
+            opacity: 0.1;
+            top: 10%;
+            left: 10%;
+            z-index: -1;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(20, 184, 166, 0.1);
+            color: var(--primary);
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 64px;
+            line-height: 1.1;
+            font-weight: 800;
+            margin-bottom: 24px;
+            background: linear-gradient(to right, #fff, #9CA3AF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #000;
+            padding: 18px 40px;
+            border-radius: 14px;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(20, 184, 166, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(20, 184, 166, 0.4);
+        }
+
+        /* Features Section */
+        .features {
+            padding-bottom: 100px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            font-weight: 800;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(20, 184, 166, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Essential Legal Section (For Razorpay) */
+        .legal {
+            background: #080C14;
+            padding: 100px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .legal-header {
+            margin-bottom: 60px;
+        }
+
+        .policy-group {
+            background: var(--card);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .policy-group h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .policy-text {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .policy-text strong {
+            color: #fff;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #112240, #030712);
+            padding: 60px;
+            border-radius: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .details {
+            display: grid;
+            gap: 20px;
+        }
+
+        .detail-item {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .detail-item div {
+            padding: 12px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            color: var(--primary);
+        }
+
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 40px; }
+            .contact-box { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <div class="nav-logo">
+                <img src="app_logo.png" alt="PocketID Logo">
+                PocketID
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#legal">Policies</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="badge">Indus App Store Early Access</div>
+                <h1>Secure Your ID, Secure Your Life.</h1>
+                <p>The ultimate digital locker for your Identity Cards, Professional Certificates, and Secret Documents. Protected by military-grade encryption.</p>
+                <a href="#contact" class="cta-btn">Register for Early Access</a>
+            </div>
+            <div class="hero-image">
+                <img src="hero.png" alt="PocketID App UI Mockup">
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="features">
+            <div class="section-title">
+                <div class="badge">Capabilities</div>
+                <h2>Next-Gen Wallet Features</h2>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>Biometric-Vault</h3>
+                    <p>Access your sensitive data only via Fingerprint or Face ID. Even if you lose your phone, your vault remains locked.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">☁️</div>
+                    <h3>Encrypted Sync</h3>
+                    <p>End-to-end encrypted backup to Google Drive or iCloud. You own the keys; only you can decrypt the data.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🚫</div>
+                    <h3>Privacy First</h3>
+                    <p>No advertisements, no tracking, and zero data selling. PocketID is built for privacy-conscious users.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Mandatory Policies Section (Razorpay Approval) -->
+    <section id="legal" class="legal">
+        <div class="container">
+            <div class="legal-header">
+                <div class="badge">Legal Compliance</div>
+                <h2>Policies & Standards</h2>
+            </div>
+
+            <div class="policy-group">
+                <h3>📜 Privacy Policy</h3>
+                <div class="policy-text">
+                    PocketID ("the App") respects your privacy. We collect only the data necessary to provide services: device ID for licensing and locally hashed biometric tokens. <strong>We do not store your documents on our servers;</strong> all data is stored locally on your device or in your private cloud backup. 
+                    We do not share, sell, or rent your personal information to third parties.
+                </div>
+            </div>
+
+            <div class="policy-group">
+                <h3>⚖️ Terms & Conditions</h3>
+                <div class="policy-text">
+                    By using PocketID, you agree to protect your master PIN. The user is responsible for the physical security of their device. PocketID Pro is a software-as-a-service (SaaS) product. Use of the app is subject to acceptance of these terms. Abuse of the system or attempting to reverse engineer the code will result in permanent account suspension.
+                </div>
+            </div>
+
+            <div class="policy-group">
+                <h3>💰 Refund & Cancellation</h3>
+                <div class="policy-text">
+                    <strong>Refund Policy:</strong> Since PocketID Pro provides instant access to premium features (digital goods), we generally operate on a <strong>No-Refund</strong> policy. However, if a payment was made by mistake or double-charged, we process refunds within 5-7 business days of request. 
+                    <br><strong>Cancellation:</strong> You can cancel your monthly subscription at any time via the Google Billing UI within the app settings.
+                </div>
+            </div>
+
+            <div class="policy-group">
+                <h3>🚚 Shipping & Delivery</h3>
+                <div class="policy-text">
+                    PocketID is a <strong>purely digital product.</strong> There is no physical shipping involved. 
+                    <br><strong>Delivery Timeline:</strong> Pro features are delivered <strong>instantly</strong> upon successful payment verification. A "Pro Badge" and unlocked features will appear in your app immediately.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Box -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-box">
+                <div class="contact-info">
+                    <h2>Ready to Go Pro?</h2>
+                    <p>Contact our support team for setup assistance or business queries.</p>
+                    <div class="details">
+                        <div class="detail-item">
+                            <div>📧</div>
+                            <span>sahil@sahilcodelab.com</span>
+                        </div>
+                        <div class="detail-item">
+                            <div>📍</div>
+                            <span>Gwalior, Madhya Pradesh, India</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-action">
+                    <a href="mailto:contact.sahilraza@gmail.com" class="cta-btn">Sent an Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sahil Codelab (PocketID). All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 11px; opacity: 0.5;">Indus App Store Partner Project</p>
+        </div>
+    </footer>
+
+</body>
+</html>
