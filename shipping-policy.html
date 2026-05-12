@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - PocketID | Secure Document Wallet</title>
+    <title>Delivery Policy - PocketID | Secure Document Wallet</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -71,67 +71,36 @@
             font-weight: 800;
         }
 
+        .last-updated {
+            color: var(--text-muted);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin: 40px 0 20px;
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
         p {
             color: var(--text-muted);
             margin-bottom: 20px;
             font-size: 16px;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .contact-card {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 40px;
-            border-radius: 24px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: transform 0.3s, border-color 0.3s;
-            text-align: center;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
-
-        .icon-box {
-            width: 60px;
-            height: 60px;
-            background: rgba(20, 184, 166, 0.1);
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            color: var(--primary);
-            font-size: 24px;
-        }
-
-        .contact-card h3 {
-            color: #fff;
-            margin-bottom: 12px;
-            font-size: 20px;
-        }
-
-        .contact-card p {
-            font-size: 15px;
-            margin-bottom: 20px;
-        }
-
-        .contact-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 18px;
-            transition: opacity 0.3s;
-        }
-
-        .contact-link:hover {
-            opacity: 0.8;
         }
 
         .back-link {
@@ -150,19 +119,12 @@
             color: var(--primary);
         }
 
-        .map-placeholder {
-            margin-top: 50px;
-            width: 100%;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 24px;
+        .delivery-steps {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 20px;
             border: 1px solid rgba(255,255,255,0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            text-align: center;
-            padding: 20px;
+            margin-top: 30px;
         }
 
         @media (max-width: 768px) {
@@ -183,42 +145,37 @@
                 <img src="app_logo.png" alt="PocketID Logo">
                 PocketID
             </div>
-            <h1>Contact Us</h1>
-            <p>Have questions or need assistance? Our team is here to help you secure your identity.</p>
+            <h1>Delivery Policy</h1>
+            <p class="last-updated">Last Updated: May 12, 2026</p>
         </div>
 
-        <div class="contact-grid">
-            <div class="contact-card">
-                <div class="icon-box">📧</div>
-                <h3>Email Support</h3>
-                <p>For technical issues, account queries, and Pro Membership support.</p>
-                <a href="mailto:cotact.sahilraza@gmail.com" class="contact-link">cotact.sahilraza@gmail.com</a>
-            </div>
+        <p>This policy describes how SahilCodeLab handles the delivery of its digital services during the early access phase.</p>
 
-            <div class="contact-card">
-                <div class="icon-box">📍</div>
-                <h3>Office Location</h3>
-                <p>SahilCodeLab Headquarters<br>
-                123/A, Salt Lake City, Sector V,<br>
-                Kolkata, WB - 700091, India</p>
-                <span class="contact-link" style="cursor: default;">Official Address</span>
-            </div>
+        <h2>1. Digital Access</h2>
+        <p>PocketID is a digital software service. We <strong>do not ship physical products</strong>. All features and digital certificates provided through the PocketID app are delivered electronically.</p>
+
+        <h2>2. Delivery Timeline</h2>
+        <p>Access to our digital services is <strong>instant</strong> upon successful registration and account creation within the app. Since the app is currently in early access, all premium-tier features are unlocked for registered users without any fee.</p>
+
+        <div class="delivery-steps">
+            <h3 style="color: #fff; margin-bottom: 15px;">How you receive your service:</h3>
+            <ul style="color: var(--text-muted); padding-left: 20px;">
+                <li style="margin-bottom: 10px;">Download the PocketID app from the official store.</li>
+                <li style="margin-bottom: 10px;">Create your secure account using your email.</li>
+                <li style="margin-bottom: 10px;">Immediately start using all features, including the secure vault and digital certificates.</li>
+                <li style="margin-bottom: 10px;">Digital certificates can be viewed and downloaded directly from within the app.</li>
+            </ul>
         </div>
 
-        <div class="contact-card" style="margin-top: 30px;">
-            <div class="icon-box">⏰</div>
-            <h3>Support Hours</h3>
-            <p>Our dedicated team is available to assist you during the following hours:</p>
-            <p style="color: #fff; font-weight: 700; margin-bottom: 0;">Monday – Friday: 10:00 AM – 6:00 PM (IST)</p>
-        </div>
+        <h2>3. Support</h2>
+        <p>If you encounter any issues accessing the app features after registration, please contact our support team at <strong>cotact.sahilraza@gmail.com</strong>. We aim to respond to all technical queries within 24-48 hours.</p>
 
-        <div class="map-placeholder">
-            <div>
-                <p style="font-size: 24px; margin-bottom: 10px;">🏢</p>
-                <p>SahilCodeLab is a registered entity in Kolkata, West Bengal.<br>
-                Serving users globally with secure identity solutions.</p>
-            </div>
-        </div>
+        <h2>4. Contact Us</h2>
+        <p>If you have any questions about the delivery of our digital services, please reach out to us at:</p>
+        <p style="color: #fff;">
+            <strong>Email:</strong> cotact.sahilraza@gmail.com<br>
+            <strong>Address:</strong> 123/A, Salt Lake City, Sector V, Kolkata, West Bengal - 700091, India
+        </p>
     </div>
 
     <footer style="text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 14px; padding-bottom: 40px;">
