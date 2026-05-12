@@ -3,41 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delivery Policy - PocketID | Secure Document Wallet</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <title>Shipping Policy - PocketID | Secure Document Wallet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #14B8A6;
-            --accent: #2DD4BF;
-            --bg: #030712;
-            --card: #111827;
-            --text-main: #F9FAFB;
-            --text-muted: #9CA3AF;
+            --bg: #020617;
+            --card-bg: rgba(15, 23, 42, 0.6);
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Outfit', sans-serif;
         }
 
         body {
             background-color: var(--bg);
             color: var(--text-main);
             line-height: 1.8;
-            padding: 60px 20px;
-            background-image: radial-gradient(circle at 50% -20%, #112240 0%, #030712 100%);
+            padding: 80px 24px;
+            background-image: radial-gradient(circle at 50% -20%, #1e293b 0%, #020617 100%);
             background-attachment: fixed;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: rgba(17, 24, 39, 0.8);
+            background: var(--card-bg);
             padding: 60px;
-            border-radius: 32px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 40px;
+            border: 1px solid var(--glass-border);
             backdrop-filter: blur(20px);
             box-shadow: 0 40px 100px rgba(0,0,0,0.5);
         }
@@ -51,7 +51,7 @@
             font-weight: 800;
             font-size: 28px;
             color: var(--primary);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -59,38 +59,31 @@
         }
 
         .logo img {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
         }
 
         h1 {
             color: #fff;
-            margin-bottom: 12px;
-            font-size: 36px;
+            margin-bottom: 8px;
+            font-size: 42px;
             font-weight: 800;
+            letter-spacing: -1px;
         }
 
-        .last-updated {
-            color: var(--text-muted);
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        h2 {
-            color: var(--primary);
+        h3 {
+            color: #fff;
             margin: 40px 0 20px;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        h2::before {
+        h3::before {
             content: '';
-            display: inline-block;
             width: 4px;
             height: 24px;
             background: var(--primary);
@@ -100,18 +93,17 @@
         p {
             color: var(--text-muted);
             margin-bottom: 20px;
-            font-size: 16px;
+            font-size: 17px;
         }
 
         .back-link {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             color: var(--text-muted);
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
             transition: color 0.3s;
         }
 
@@ -119,63 +111,42 @@
             color: var(--primary);
         }
 
-        .delivery-steps {
-            background: rgba(255, 255, 255, 0.03);
+        .highlight-box {
+            background: rgba(20, 184, 166, 0.05);
+            border: 1px solid rgba(20, 184, 166, 0.1);
             padding: 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.05);
-            margin-top: 30px;
+            border-radius: 24px;
+            margin: 30px 0;
         }
 
         @media (max-width: 768px) {
-            .container { padding: 30px; }
-            h1 { font-size: 28px; }
+            .container { padding: 40px 24px; }
+            h1 { font-size: 32px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Back to Home
-        </a>
+        <a href="index.html" class="back-link">← Back to Home</a>
         
         <div class="header">
             <div class="logo">
                 <img src="app_logo.png" alt="PocketID Logo">
                 PocketID
             </div>
-            <h1>Delivery Policy</h1>
-            <p class="last-updated">Last Updated: May 12, 2026</p>
+            <h1>Shipping Policy</h1>
         </div>
 
-        <p>This policy describes how SahilCodeLab handles the delivery of its digital services during the early access phase.</p>
-
-        <h2>1. Digital Access</h2>
-        <p>PocketID is a digital software service. We <strong>do not ship physical products</strong>. All features and digital certificates provided through the PocketID app are delivered electronically.</p>
-
-        <h2>2. Delivery Timeline</h2>
-        <p>Access to our digital services is <strong>instant</strong> upon successful registration and account creation within the app. Since the app is currently in early access, all premium-tier features are unlocked for registered users without any fee.</p>
-
-        <div class="delivery-steps">
-            <h3 style="color: #fff; margin-bottom: 15px;">How you receive your service:</h3>
-            <ul style="color: var(--text-muted); padding-left: 20px;">
-                <li style="margin-bottom: 10px;">Download the PocketID app from the official store.</li>
-                <li style="margin-bottom: 10px;">Create your secure account using your email.</li>
-                <li style="margin-bottom: 10px;">Immediately start using all features, including the secure vault and digital certificates.</li>
-                <li style="margin-bottom: 10px;">Digital certificates can be viewed and downloaded directly from within the app.</li>
-            </ul>
+        <div class="highlight-box">
+            <h3 style="margin-top: 0;">Digital Delivery Only</h3>
+            <p style="margin-bottom: 0;"><strong>PocketID</strong> provides <strong>Digital Products</strong> only. No physical goods will be shipped to your address. Pro features and license keys are delivered instantly within the app upon successful payment.</p>
         </div>
 
-        <h2>3. Support</h2>
-        <p>If you encounter any issues accessing the app features after registration, please contact our support team at <strong>cotact.sahilraza@gmail.com</strong>. We aim to respond to all technical queries within 24-48 hours.</p>
+        <p>Since all our products are digital, there are no shipping costs, no customs duties, and no physical delivery times. Your access is granted as soon as the transaction is confirmed by our payment gateway.</p>
 
-        <h2>4. Contact Us</h2>
-        <p>If you have any questions about the delivery of our digital services, please reach out to us at:</p>
-        <p style="color: #fff;">
-            <strong>Email:</strong> cotact.sahilraza@gmail.com<br>
-            <strong>Address:</strong> 123/A, Salt Lake City, Sector V, Kolkata, West Bengal - 700091, India
-        </p>
+        <div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid var(--glass-border);">
+            <p>If you have any questions, contact us at: <strong>cotact.sahilraza@gmail.com</strong></p>
+        </div>
     </div>
 
     <footer style="text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 14px; padding-bottom: 40px;">

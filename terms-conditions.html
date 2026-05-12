@@ -4,40 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms & Conditions - PocketID | Secure Document Wallet</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #14B8A6;
-            --accent: #2DD4BF;
-            --bg: #030712;
-            --card: #111827;
-            --text-main: #F9FAFB;
-            --text-muted: #9CA3AF;
+            --bg: #020617;
+            --card-bg: rgba(15, 23, 42, 0.6);
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Outfit', sans-serif;
         }
 
         body {
             background-color: var(--bg);
             color: var(--text-main);
             line-height: 1.8;
-            padding: 60px 20px;
-            background-image: radial-gradient(circle at 50% -20%, #112240 0%, #030712 100%);
+            padding: 80px 24px;
+            background-image: radial-gradient(circle at 50% -20%, #1e293b 0%, #020617 100%);
             background-attachment: fixed;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: rgba(17, 24, 39, 0.8);
+            background: var(--card-bg);
             padding: 60px;
-            border-radius: 32px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 40px;
+            border: 1px solid var(--glass-border);
             backdrop-filter: blur(20px);
             box-shadow: 0 40px 100px rgba(0,0,0,0.5);
         }
@@ -51,7 +51,7 @@
             font-weight: 800;
             font-size: 28px;
             color: var(--primary);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -59,38 +59,31 @@
         }
 
         .logo img {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
         }
 
         h1 {
             color: #fff;
-            margin-bottom: 12px;
-            font-size: 36px;
+            margin-bottom: 8px;
+            font-size: 42px;
             font-weight: 800;
+            letter-spacing: -1px;
         }
 
-        .last-updated {
-            color: var(--text-muted);
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        h2 {
-            color: var(--primary);
+        h3 {
+            color: #fff;
             margin: 40px 0 20px;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        h2::before {
+        h3::before {
             content: '';
-            display: inline-block;
             width: 4px;
             height: 24px;
             background: var(--primary);
@@ -100,28 +93,32 @@
         p {
             color: var(--text-muted);
             margin-bottom: 20px;
-            font-size: 16px;
+            font-size: 17px;
         }
 
         ul {
             margin-bottom: 20px;
-            padding-left: 20px;
+            padding-left: 24px;
         }
 
         li {
             color: var(--text-muted);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        strong {
+            color: #fff;
         }
 
         .back-link {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             color: var(--text-muted);
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
             transition: color 0.3s;
         }
 
@@ -130,17 +127,14 @@
         }
 
         @media (max-width: 768px) {
-            .container { padding: 30px; }
-            h1 { font-size: 28px; }
+            .container { padding: 40px 24px; }
+            h1 { font-size: 32px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Back to Home
-        </a>
+        <a href="index.html" class="back-link">← Back to Home</a>
         
         <div class="header">
             <div class="logo">
@@ -148,46 +142,29 @@
                 PocketID
             </div>
             <h1>Terms & Conditions</h1>
-            <p class="last-updated">Last Updated: May 12, 2026</p>
         </div>
 
-        <p>By downloading or using the PocketID application, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app.</p>
+        <p>By downloading or using <strong>PocketID</strong>, these terms will automatically apply to you.</p>
 
-        <h2>1. Acceptance of Terms</h2>
-        <p>By using PocketID, you agree to comply with and be bound by these Terms and Conditions. If you do not agree to these terms, please do not use the application.</p>
+        <h3>1. Usage Policy</h3>
+        <p>PocketID is a tool for personal document management. You are responsible for the legality of the documents you store. You must not use the app for any illegal activities.</p>
 
-        <h2>2. Intellectual Property</h2>
-        <p>You are not allowed to copy, or modify the app, any part of the app, or our trademarks in any way. You are not allowed to attempt to extract the source code of the app, and you also shouldn’t try to translate the app into other languages, or make derivative versions. The app itself, and all the trademarks, copyright, database rights and other intellectual property rights related to it, still belong to SahilCodeLab.</p>
-
-        <h2>3. Use of the App</h2>
-        <p>PocketID stores and processes personal data that you have provided to us, in order to provide our Service. It’s your responsibility to keep your phone and access to the app secure.</p>
+        <h3>2. Pro Version & Coins</h3>
         <ul>
-            <li>You must provide accurate and complete information during registration.</li>
-            <li>You are responsible for all activity that occurs under your account.</li>
-            <li>You agree not to use the app for any illegal or unauthorized purpose.</li>
+            <li><strong>Subscription:</strong> Pro features are unlocked via subscription or one-time payment.</li>
+            <li><strong>Coins:</strong> In-app coins can be earned via ads or daily rewards. These coins have no real-world monetary value and cannot be exchanged for cash.</li>
+            <li><strong>License:</strong> Your Pro license is tied to your Device ID.</li>
         </ul>
 
-        <h2>4. Early Access</h2>
-        <p>PocketID may offer early access to certain features. These features are provided "as is" and may be modified or discontinued at any time without notice.</p>
+        <h3>3. Disclaimer of Liability</h3>
+        <p>Since we do not store your data on our servers, <strong>PocketID is not responsible for any data loss</strong> resulting from device theft, damage, or accidental app uninstallation. Always maintain a manual backup using the export tool.</p>
 
-        <h2>5. Termination</h2>
-        <p>We may terminate or suspend your access to our app immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.</p>
+        <h3>4. Not an Official Issuer</h3>
+        <p>PocketID is a digital storage app. Digital copies stored in this app may not be accepted as valid proof by government authorities unless specified by local laws. Always carry original documents when required.</p>
 
-        <h2>6. Limitation of Liability</h2>
-        <p>In no event shall SahilCodeLab, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.</p>
-
-        <h2>7. Governing Law</h2>
-        <p>These Terms shall be governed and construed in accordance with the laws of West Bengal, India, without regard to its conflict of law provisions.</p>
-
-        <h2>8. Changes to Terms</h2>
-        <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. We will try to provide at least 30 days' notice prior to any new terms taking effect.</p>
-
-        <h2>9. Contact Us</h2>
-        <p>If you have any questions about these Terms, please contact us at:</p>
-        <p style="color: #fff;">
-            <strong>Email:</strong> cotact.sahilraza@gmail.com<br>
-            <strong>Address:</strong> 123/A, Salt Lake City, Sector V, Kolkata, West Bengal - 700091, India
-        </p>
+        <div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid var(--glass-border);">
+            <p>If you have any questions, contact us at: <strong>cotact.sahilraza@gmail.com</strong></p>
+        </div>
     </div>
 
     <footer style="text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 14px; padding-bottom: 40px;">

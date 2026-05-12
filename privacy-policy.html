@@ -4,40 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - PocketID | Secure Document Wallet</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #14B8A6;
-            --accent: #2DD4BF;
-            --bg: #030712;
-            --card: #111827;
-            --text-main: #F9FAFB;
-            --text-muted: #9CA3AF;
+            --primary-glow: rgba(20, 184, 166, 0.3);
+            --bg: #020617;
+            --card-bg: rgba(15, 23, 42, 0.6);
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Outfit', sans-serif;
         }
 
         body {
             background-color: var(--bg);
             color: var(--text-main);
             line-height: 1.8;
-            padding: 60px 20px;
-            background-image: radial-gradient(circle at 50% -20%, #112240 0%, #030712 100%);
+            padding: 80px 24px;
+            background-image: radial-gradient(circle at 50% -20%, #1e293b 0%, #020617 100%);
             background-attachment: fixed;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: rgba(17, 24, 39, 0.8);
+            background: var(--card-bg);
             padding: 60px;
-            border-radius: 32px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 40px;
+            border: 1px solid var(--glass-border);
             backdrop-filter: blur(20px);
             box-shadow: 0 40px 100px rgba(0,0,0,0.5);
         }
@@ -51,7 +52,7 @@
             font-weight: 800;
             font-size: 28px;
             color: var(--primary);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -59,38 +60,39 @@
         }
 
         .logo img {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
         }
 
         h1 {
             color: #fff;
-            margin-bottom: 12px;
-            font-size: 36px;
+            margin-bottom: 8px;
+            font-size: 42px;
             font-weight: 800;
+            letter-spacing: -1px;
         }
 
-        .last-updated {
-            color: var(--text-muted);
+        .effective-date {
+            color: var(--primary);
+            font-weight: 600;
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        h2 {
-            color: var(--primary);
+        h3 {
+            color: #fff;
             margin: 40px 0 20px;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        h2::before {
+        h3::before {
             content: '';
-            display: inline-block;
             width: 4px;
             height: 24px;
             background: var(--primary);
@@ -100,28 +102,32 @@
         p {
             color: var(--text-muted);
             margin-bottom: 20px;
-            font-size: 16px;
+            font-size: 17px;
         }
 
         ul {
             margin-bottom: 20px;
-            padding-left: 20px;
+            padding-left: 24px;
         }
 
         li {
             color: var(--text-muted);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        strong {
+            color: #fff;
         }
 
         .back-link {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             color: var(--text-muted);
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
             transition: color 0.3s;
         }
 
@@ -132,23 +138,20 @@
         .highlight-box {
             background: rgba(20, 184, 166, 0.05);
             border: 1px solid rgba(20, 184, 166, 0.1);
-            padding: 24px;
-            border-radius: 16px;
+            padding: 30px;
+            border-radius: 24px;
             margin: 30px 0;
         }
 
         @media (max-width: 768px) {
-            .container { padding: 30px; }
-            h1 { font-size: 28px; }
+            .container { padding: 40px 24px; }
+            h1 { font-size: 32px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Back to Home
-        </a>
+        <a href="index.html" class="back-link">← Back to Home</a>
         
         <div class="header">
             <div class="logo">
@@ -156,69 +159,35 @@
                 PocketID
             </div>
             <h1>Privacy Policy</h1>
-            <p class="last-updated">Last Updated: May 12, 2026</p>
+            <p class="effective-date">Effective Date: May 12, 2026</p>
         </div>
 
-        <p>Welcome to PocketID ("we," "our," or "us"). We value your privacy and are committed to protecting your personal data. This Privacy Policy outlines how SahilCodeLab collects, uses, and protects your information when you use the PocketID mobile application and website.</p>
+        <p>Welcome to <strong>PocketID</strong>. Your privacy and the security of your data are our top priorities. This policy explains how we handle your information.</p>
 
         <div class="highlight-box">
-            <p style="margin-bottom: 0; color: #fff;"><strong>Key Privacy Commitment:</strong> PocketID is built with a "Privacy-First" architecture. Your sensitive documents are stored locally on your device or in your private encrypted cloud storage. We do not have access to your private documents.</p>
+            <h3 style="margin-top: 0;">1. Data Sovereignty (Offline First)</h3>
+            <p style="margin-bottom: 0;">PocketID is a "Local-First" application. This means <strong>we do NOT store your personal documents, ID cards, notes, or certificates on our servers.</strong> All your sensitive data is stored locally on your device's internal storage using industry-standard encryption. We have no access to your personal files.</p>
         </div>
 
-        <h2>1. Information We Collect</h2>
-        <p>To provide our services effectively, we may collect the following types of information:</p>
+        <h3>2. Information We Collect</h3>
         <ul>
-            <li><strong>Personal Identifiers:</strong> Name, email address, and phone number when you register for early access or Pro membership.</li>
-            <li><strong>Document Metadata:</strong> Information about the types of cards or documents you store (e.g., "Aadhaar Card" or "License") to help organize your vault. Note: The actual content of the documents is encrypted.</li>
-            <li><strong>Usage Data:</strong> Information about how you interact with our app, such as features used and time spent, collected via internal analytics to improve user experience.</li>
-            <li><strong>Device Information:</strong> Device model, operating system version, and unique device identifiers.</li>
+            <li><strong>No Personal Data:</strong> We do not require you to create an account with your name or email.</li>
+            <li><strong>Device Information:</strong> We collect your unique Device ID solely to manage your "Pro" license and ensure your subscription works on your device.</li>
+            <li><strong>Camera Access:</strong> Used only when you choose to scan a physical document. We do not record or store anything beyond the scan you save.</li>
         </ul>
 
-        <h2>2. How We Use Your Information</h2>
-        <p>We use the collected data for the following purposes:</p>
+        <h3>3. Third-Party Services</h3>
+        <p>To provide a better experience, we use:</p>
         <ul>
-            <li>To provide and maintain the functionality of PocketID.</li>
-            <li>To issue authentic digital certificates upon successful registration.</li>
-            <li>To provide customer support and respond to your inquiries.</li>
-            <li>To send you important updates regarding our services.</li>
+            <li><strong>Google AdMob:</strong> For displaying ads. AdMob may use device identifiers to show relevant ads.</li>
+            <li><strong>Razorpay:</strong> To process payments for the "Pro" version. We do not store your payment details; they are handled securely by Razorpay.</li>
         </ul>
 
-        <h2>3. Data Storage and Security</h2>
-        <p>We implement industry-standard security measures to protect your data:</p>
-        <ul>
-            <li><strong>Local Encryption:</strong> Your documents are encrypted using AES-256 encryption before being stored on your device.</li>
-            <li><strong>No Server-Side Document Storage:</strong> We do not store your identity documents on our central servers.</li>
-            <li><strong>Secure Transmission:</strong> Any data transmitted between the app and our servers is protected using SSL/TLS encryption.</li>
-        </ul>
+        <h3>4. Data Backup</h3>
+        <p>If you use the 'Export Backup' feature, a file is created on your phone. You are responsible for keeping this file safe. If you delete the app or lose your phone without a backup, your data cannot be recovered by us.</p>
 
-        <h2>4. Third-Party Services</h2>
-        <p>We may employ third-party companies and individuals due to the following reasons:</p>
-        <ul>
-            <li><strong>AdMob (Google):</strong> We may use AdMob to display advertisements in the app. AdMob may collect data to show relevant ads.</li>
-            <li><strong>Google Drive/iCloud:</strong> If you choose to enable cloud backup, your data is stored in your private storage.</li>
-        </ul>
-
-        <h2>5. Your Rights</h2>
-        <p>You have the right to:</p>
-        <ul>
-            <li>Access the personal data we hold about you.</li>
-            <li>Request the correction of inaccurate data.</li>
-            <li>Request the deletion of your account and associated personal data.</li>
-            <li>Opt-out of marketing communications.</li>
-        </ul>
-
-        <h2>6. Children's Privacy</h2>
-        <p>Our services are not intended for children under the age of 13. We do not knowingly collect personal information from children under 13.</p>
-
-        <h2>7. Changes to This Policy</h2>
-        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
-
-        <h2>8. Contact Us</h2>
-        <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at:</p>
-        <p style="color: #fff;">
-            <strong>Email:</strong> cotact.sahilraza@gmail.com<br>
-            <strong>Address:</strong> 123/A, Salt Lake City, Sector V, Kolkata, West Bengal - 700091, India
-        </p>
+        <h3>5. Contact Us</h3>
+        <p>If you have any questions, contact us at: <strong>cotact.sahilraza@gmail.com</strong></p>
     </div>
 
     <footer style="text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 14px; padding-bottom: 40px;">
