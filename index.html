@@ -282,6 +282,62 @@
             font-size: 16px;
         }
 
+        /* FAQ Section */
+        .faq {
+            padding: 120px 0;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary);
+        }
+
+        .faq-question {
+            padding: 24px 32px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .faq-answer {
+            padding: 0 32px 24px;
+            color: var(--text-muted);
+            font-size: 16px;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+            color: var(--primary);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
         /* Screenshots */
         .screenshots {
             padding: 120px 0;
@@ -448,8 +504,8 @@
             </div>
             <div class="nav-links">
                 <a href="#features">Features</a>
-                <a href="#preview">App Preview</a>
-                <a href="#contact">Join Now</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Support</a>
             </div>
         </div>
     </nav>
@@ -459,13 +515,13 @@
         <section class="hero">
             <div class="hero-content">
                 <div class="badge">
-                    <span>✨</span> Early Access Now Live
+                    <span>✨</span> Local-First Architecture
                 </div>
-                <h1>Secure Your ID. <br><span style="color: var(--primary);">Secure Your Life.</span></h1>
-                <p>The ultimate digital locker for your Identity Cards, Certificates, and Private Documents. Protected by military-grade encryption and biometric security.</p>
+                <h1>Your Data. <br><span style="color: var(--primary);">Your Device.</span></h1>
+                <p>The world's first identity wallet that collects <strong>ZERO</strong> personal data. Only your device ID is used to manage ads. Your documents never leave your phone.</p>
                 <div class="cta-group">
                     <a href="#contact" class="cta-btn">
-                        Get Early Access 
+                        Learn More 
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </a>
                 </div>
@@ -478,24 +534,50 @@
         <!-- Features -->
         <section id="features" class="features">
             <div class="section-title">
-                <div class="badge">Capabilities</div>
-                <h2>Next-Gen Security Features</h2>
+                <div class="badge">Privacy First</div>
+                <h2>Truly Secure Features</h2>
             </div>
             <div class="feature-grid">
                 <div class="feature-card">
                     <div class="card-icon">🛡️</div>
-                    <h3>Biometric Vault</h3>
-                    <p>Access your sensitive data only via Fingerprint or Face ID. Your vault remains locked even if your device is compromised.</p>
+                    <h3>Offline Storage</h3>
+                    <p>All documents are encrypted and stored locally. We have no central servers to hack or leak your data.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="card-icon">☁️</div>
-                    <h3>Encrypted Sync</h3>
-                    <p>End-to-end encrypted backup to Google Drive or iCloud. You own the private keys; we never see your data.</p>
+                    <div class="card-icon">🔑</div>
+                    <h3>Biometric Unlock</h3>
+                    <p>Native integration with FaceID and Fingerprint ensures that only you can open your vault.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="card-icon">🚫</div>
-                    <h3>Zero Tracking</h3>
-                    <p>No advertisements, no tracking, and zero data harvesting. PocketID is built for the privacy-conscious user.</p>
+                    <div class="card-icon">💎</div>
+                    <h3>Pro via Ads</h3>
+                    <p>Unlock premium features by watching ads and earning coins. No direct cash needed for early access.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq">
+            <div class="section-title">
+                <div class="badge">Knowledge</div>
+                <h2>Common Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">Does PocketID collect my personal data? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer">Absolutely not. We do not ask for your name, email, or phone number. Only your Device ID is used for ad management and license synchronization.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Where are my documents stored? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer">Your documents are stored in an encrypted vault on your phone's internal storage. They never leave your device unless you choose to export a backup.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do I get the Pro features? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer">You can earn in-app coins by watching advertisements or through daily rewards. These coins can be used to unlock Pro features.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What if I lose my phone? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer">Since we don't store your data on our servers, we cannot recover it for you. We highly recommend using the 'Export Backup' tool regularly.</div>
                 </div>
             </div>
         </section>
@@ -504,7 +586,7 @@
         <section id="preview" class="screenshots">
             <div class="section-title">
                 <div class="badge">App Preview</div>
-                <h2>Experience the Interface</h2>
+                <h2>Explore the Interface</h2>
             </div>
             <div class="screen-slider">
                 <div class="screen-item"><img src="flutter_03.png" alt="PocketID Screen"></div>
@@ -519,12 +601,12 @@
         <section id="contact" class="contact">
             <div class="contact-card">
                 <div class="contact-info">
-                    <h2>Ready to Join?</h2>
-                    <p>Be the first to experience the world's most secure digital identity wallet.</p>
+                    <h2>Got Questions?</h2>
+                    <p>We are here to help you secure your digital life.</p>
                     <div class="contact-details">
                         <div class="detail-row">
                             <i>📧</i>
-                            <span>cotact.sahilraza@gmail.com</span>
+                            <span>contact.sahilraza@gmail.com</span>
                         </div>
                         <div class="detail-row">
                             <i>📍</i>
@@ -533,7 +615,7 @@
                     </div>
                 </div>
                 <div class="contact-action">
-                    <a href="mailto:cotact.sahilraza@gmail.com" class="cta-btn" style="padding: 24px 60px;">
+                    <a href="mailto:contact.sahilraza@gmail.com" class="cta-btn" style="padding: 24px 60px;">
                         Contact Support
                     </a>
                 </div>
@@ -559,5 +641,14 @@
             </p>
         </div>
     </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
