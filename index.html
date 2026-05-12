@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PocketID - Secure Identity & Document Wallet | SahilCodeLab</title>
-    <meta name="description"
-        content="Securely store your ID cards, certificates, and documents with PocketID Pro. Get your authentic digital certificate today. A product of SahilCodeLab.">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
+    <meta name="description" content="Securely store your ID cards, certificates, and documents with PocketID. Get your authentic digital certificate today. A product of SahilCodeLab.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #14B8A6;
+            --primary-glow: rgba(20, 184, 166, 0.3);
             --accent: #2DD4BF;
-            --bg: #030712;
-            --card: #111827;
-            --text-main: #F9FAFB;
-            --text-muted: #9CA3AF;
-            --glass: rgba(17, 24, 39, 0.7);
+            --bg: #020617;
+            --card-bg: rgba(15, 23, 42, 0.6);
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Outfit', sans-serif;
             scroll-behavior: smooth;
         }
 
@@ -32,220 +30,180 @@
             background-color: var(--bg);
             color: var(--text-main);
             overflow-x: hidden;
-            background-image: radial-gradient(circle at 50% -20%, #112240 0%, #030712 100%);
+            line-height: 1.6;
+        }
+
+        /* Animated Background */
+        .bg-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(20, 184, 166, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(45, 212, 191, 0.05) 0%, transparent 40%);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         /* Navbar */
         nav {
-            padding: 24px 0;
+            padding: 20px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            position: sticky;
+            backdrop-filter: blur(20px);
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 100%;
             z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
+            background: rgba(2, 6, 23, 0.7);
         }
 
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-weight: 800;
-            font-size: 24px;
-            color: var(--primary);
+            gap: 14px;
+            font-weight: 700;
+            font-size: 26px;
+            letter-spacing: -0.5px;
+            color: #fff;
         }
 
         .nav-logo img {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px var(--primary-glow);
         }
 
         .branding-subtext {
-            font-size: 10px;
+            font-size: 11px;
             color: var(--text-muted);
             font-weight: 400;
-            margin-top: -4px;
+            margin-top: -2px;
+            letter-spacing: 0.5px;
         }
 
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
-            margin-left: 32px;
-            font-weight: 600;
-            font-size: 14px;
-            transition: color 0.3s;
+            margin-left: 40px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .nav-links a:hover {
             color: var(--primary);
-        }
-
-        /* Screenshots Section */
-        .screenshots {
-            padding: 100px 0;
-        }
-
-        .screenshot-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            padding: 20px 0;
-        }
-
-        .screenshot-item {
-            border-radius: 24px;
-            border: 6px solid #1f2937;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s;
-        }
-
-        .screenshot-item:hover {
-            transform: scale(1.05);
-            border-color: var(--primary);
-        }
-
-        .screenshot-item img {
-            width: 100%;
-            display: block;
-        }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .pricing-card {
-            max-width: 400px;
-            margin: 0 auto;
-            background: linear-gradient(145deg, #1f2937, #111827);
-            padding: 50px;
-            border-radius: 32px;
-            border: 1px solid var(--primary);
-            box-shadow: 0 0 50px rgba(20, 184, 166, 0.2);
-        }
-
-        .price {
-            font-size: 48px;
-            font-weight: 800;
-            margin: 20px 0;
-            color: #fff;
-        }
-
-        .price span {
-            font-size: 18px;
-            color: var(--text-muted);
-        }
-
-        .pricing-features {
-            text-align: left;
-            margin-bottom: 30px;
-        }
-
-        .pricing-features li {
-            list-style: none;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text-muted);
-        }
-
-        .pricing-features li::before {
-            content: '✓';
-            color: var(--primary);
-            font-weight: 900;
+            text-shadow: 0 0 10px var(--primary-glow);
         }
 
         /* Hero Section */
         .hero {
-            padding: 100px 0 150px;
+            padding: 180px 0 120px;
             display: flex;
             align-items: center;
-            gap: 60px;
-            flex-wrap: wrap;
+            gap: 80px;
+            min-height: 90vh;
         }
 
         .hero-content {
-            flex: 1;
-            min-width: 300px;
+            flex: 1.2;
         }
 
         .hero-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
+            flex: 0.8;
             position: relative;
+            perspective: 1000px;
         }
 
         .hero-image img {
             width: 100%;
-            max-width: 500px;
-            border-radius: 40px;
-            box-shadow: 0 40px 100px rgba(20, 184, 166, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 450px;
+            border-radius: 32px;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.6), 0 0 40px var(--primary-glow);
+            border: 1px solid var(--glass-border);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotateY(-5deg); }
+            50% { transform: translateY(-20px) rotateY(5deg); }
         }
 
         .badge {
-            display: inline-block;
-            padding: 8px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
             background: rgba(20, 184, 166, 0.1);
             color: var(--primary);
             border-radius: 100px;
-            font-weight: 700;
-            font-size: 12px;
-            letter-spacing: 1px;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(20, 184, 166, 0.2);
+            margin-bottom: 32px;
             text-transform: uppercase;
-            margin-bottom: 24px;
         }
 
         h1 {
-            font-size: 64px;
-            line-height: 1.1;
+            font-size: 72px;
+            line-height: 1.05;
             font-weight: 800;
-            margin-bottom: 24px;
-            background: linear-gradient(to right, #fff, #9CA3AF);
+            margin-bottom: 28px;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #fff 0%, #94A3B8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: 18px;
+            font-size: 20px;
             color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 500px;
+            margin-bottom: 48px;
+            max-width: 540px;
+            font-weight: 400;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
         }
 
         .cta-btn {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: var(--primary);
             color: #000;
-            padding: 18px 40px;
-            border-radius: 14px;
-            font-weight: 800;
+            padding: 20px 42px;
+            border-radius: 16px;
+            font-weight: 700;
             text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 10px 30px rgba(20, 184, 166, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px var(--primary-glow);
+            transition: all 0.3s;
         }
 
         .cta-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(20, 184, 166, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--primary-glow);
+            background: var(--accent);
         }
 
         /* Features Section */
         .features {
-            padding-bottom: 100px;
+            padding: 120px 0;
         }
 
         .section-title {
@@ -254,106 +212,192 @@
         }
 
         .section-title h2 {
-            font-size: 40px;
+            font-size: 48px;
             font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-top: 12px;
         }
 
-        .grid {
+        .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
         }
 
-        .card {
-            background: var(--card);
-            padding: 40px;
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: border-color 0.3s, transform 0.3s;
+        .feature-card {
+            background: var(--card-bg);
+            padding: 48px;
+            border-radius: 32px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .card:hover {
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .feature-card:hover {
             border-color: var(--primary);
-            transform: translateY(-10px);
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
         }
 
         .card-icon {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             background: rgba(20, 184, 166, 0.1);
-            border-radius: 16px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 24px;
-            font-size: 24px;
+            margin-bottom: 32px;
+            font-size: 32px;
             color: var(--primary);
+            border: 1px solid rgba(20, 184, 166, 0.2);
         }
 
-        .card h3 {
-            font-size: 22px;
-            margin-bottom: 16px;
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 18px;
+            font-weight: 700;
         }
 
-        .card p {
+        .feature-card p {
             color: var(--text-muted);
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Screenshots */
+        .screenshots {
+            padding: 120px 0;
+            background: rgba(15, 23, 42, 0.3);
+        }
+
+        .screen-slider {
+            display: flex;
+            gap: 40px;
+            overflow-x: auto;
+            padding: 40px 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .screen-slider::-webkit-scrollbar { display: none; }
+
+        .screen-item {
+            flex: 0 0 280px;
+            border-radius: 40px;
+            border: 8px solid #1e293b;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            transition: transform 0.5s;
+        }
+
+        .screen-item:hover {
+            transform: scale(1.05) translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        .screen-item img {
+            width: 100%;
+            display: block;
         }
 
         /* Contact Section */
         .contact {
-            padding: 100px 0;
+            padding: 140px 0;
         }
 
-        .contact-box {
-            background: linear-gradient(135deg, #112240, #030712);
-            padding: 60px;
-            border-radius: 40px;
+        .contact-card {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(2, 6, 23, 0.9) 100%);
+            padding: 80px;
+            border-radius: 48px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
         }
 
-        .details {
-            display: grid;
-            gap: 20px;
+        .contact-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+            pointer-events: none;
         }
 
-        .detail-item {
+        .contact-info h2 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .contact-details {
+            margin-top: 40px;
             display: flex;
-            gap: 16px;
-            align-items: center;
+            flex-direction: column;
+            gap: 24px;
         }
 
-        .detail-item div {
-            padding: 12px;
-            background: rgba(255, 255, 255, 0.05);
+        .detail-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 18px;
+            color: var(--text-muted);
+        }
+
+        .detail-row i {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.05);
             border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: var(--primary);
         }
 
         footer {
-            padding: 60px 0;
+            padding: 100px 0 60px;
+            border-top: 1px solid var(--glass-border);
             text-align: center;
-            color: var(--text-muted);
-            font-size: 14px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 24px;
-            margin: 24px 0;
+            gap: 32px;
+            margin-bottom: 40px;
             flex-wrap: wrap;
         }
 
         .footer-links a {
             color: var(--text-muted);
             text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
             transition: color 0.3s;
         }
 
@@ -361,47 +405,73 @@
             color: var(--primary);
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 40px;
-            }
+        .footer-brand {
+            margin-bottom: 24px;
+        }
 
-            .contact-box {
-                padding: 40px 20px;
-            }
+        .footer-brand p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .disclaimer {
+            font-size: 11px;
+            color: var(--text-muted);
+            opacity: 0.5;
+            max-width: 700px;
+            margin: 32px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 968px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 140px; }
+            h1 { font-size: 52px; }
+            .hero p { margin: 0 auto 40px; }
+            .cta-group { justify-content: center; }
+            .contact-card { flex-direction: column; padding: 60px 40px; text-align: center; }
+            .detail-row { justify-content: center; }
+            .hero-image img { max-width: 320px; }
         }
     </style>
 </head>
-
 <body>
+    <div class="bg-glow"></div>
 
-    <div class="container">
-        <nav>
+    <nav>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
             <div class="nav-logo">
                 <img src="app_logo.png" alt="PocketID Logo">
                 <div>
                     <div>PocketID</div>
-                    <div class="branding-subtext">A Product of SahilCodeLab</div>
+                    <div class="branding-subtext">by SahilCodeLab</div>
                 </div>
             </div>
             <div class="nav-links">
                 <a href="#features">Features</a>
-                <a href="#app-preview">App Preview</a>
-                <a href="#contact">Contact</a>
+                <a href="#preview">App Preview</a>
+                <a href="#contact">Join Now</a>
             </div>
-        </nav>
+        </div>
+    </nav>
 
+    <main class="container">
         <!-- Hero -->
         <section class="hero">
             <div class="hero-content">
-                <div class="badge">Indus App Store Early Access</div>
-                <h1>Secure Your ID, Secure Your Life.</h1>
-                <p>The ultimate digital locker for your Identity Cards, Professional Certificates, and Secret Documents.
-                    Protected by military-grade encryption.</p>
-                <a href="#contact" class="cta-btn">Register for Early Access</a>
+                <div class="badge">
+                    <span>✨</span> Early Access Now Live
+                </div>
+                <h1>Secure Your ID. <br><span style="color: var(--primary);">Secure Your Life.</span></h1>
+                <p>The ultimate digital locker for your Identity Cards, Certificates, and Private Documents. Protected by military-grade encryption and biometric security.</p>
+                <div class="cta-group">
+                    <a href="#contact" class="cta-btn">
+                        Get Early Access 
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
             </div>
             <div class="hero-image">
-                <img src="hero.png" alt="PocketID App UI Mockup">
+                <img src="hero.png" alt="PocketID App Preview">
             </div>
         </section>
 
@@ -409,71 +479,67 @@
         <section id="features" class="features">
             <div class="section-title">
                 <div class="badge">Capabilities</div>
-                <h2>Next-Gen Wallet Features</h2>
+                <h2>Next-Gen Security Features</h2>
             </div>
-            <div class="grid">
-                <div class="card">
+            <div class="feature-grid">
+                <div class="feature-card">
                     <div class="card-icon">🛡️</div>
-                    <h3>Biometric-Vault</h3>
-                    <p>Access your sensitive data only via Fingerprint or Face ID. Even if you lose your phone, your
-                        vault remains locked.</p>
+                    <h3>Biometric Vault</h3>
+                    <p>Access your sensitive data only via Fingerprint or Face ID. Your vault remains locked even if your device is compromised.</p>
                 </div>
-                <div class="card">
+                <div class="feature-card">
                     <div class="card-icon">☁️</div>
                     <h3>Encrypted Sync</h3>
-                    <p>End-to-end encrypted backup to Google Drive or iCloud. You own the keys; only you can decrypt the
-                        data.</p>
+                    <p>End-to-end encrypted backup to Google Drive or iCloud. You own the private keys; we never see your data.</p>
                 </div>
-                <div class="card">
+                <div class="feature-card">
                     <div class="card-icon">🚫</div>
-                    <h3>Privacy First</h3>
-                    <p>No advertisements, no tracking, and zero data selling. PocketID is built for privacy-conscious
-                        users.</p>
+                    <h3>Zero Tracking</h3>
+                    <p>No advertisements, no tracking, and zero data harvesting. PocketID is built for the privacy-conscious user.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Screenshots -->
-        <section id="app-preview" class="screenshots">
+        <!-- Preview -->
+        <section id="preview" class="screenshots">
             <div class="section-title">
                 <div class="badge">App Preview</div>
-                <h2>Explore the Interface</h2>
+                <h2>Experience the Interface</h2>
             </div>
-            <div class="screenshot-grid">
-                <div class="screenshot-item"><img src="flutter_03.png" alt="PocketID Preview"></div>
-                <div class="screenshot-item"><img src="screen_cards.png" alt="PocketID Cards"></div>
-                <div class="screenshot-item"><img src="screen_documents.png" alt="PocketID Documents"></div>
-                <div class="screenshot-item"><img src="screen_settings.png" alt="PocketID Settings"></div>
-                <div class="screenshot-item"><img src="flutter_02.png" alt="PocketID Security"></div>
+            <div class="screen-slider">
+                <div class="screen-item"><img src="flutter_03.png" alt="PocketID Screen"></div>
+                <div class="screen-item"><img src="screen_cards.png" alt="PocketID Screen"></div>
+                <div class="screen-item"><img src="screen_documents.png" alt="PocketID Screen"></div>
+                <div class="screen-item"><img src="screen_settings.png" alt="PocketID Screen"></div>
+                <div class="screen-item"><img src="flutter_02.png" alt="PocketID Screen"></div>
             </div>
         </section>
 
-    </div>
-
-    <!-- Contact Box -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-box">
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <div class="contact-card">
                 <div class="contact-info">
                     <h2>Ready to Join?</h2>
-                    <p>Register for early access and experience the future of secure identity management.</p>
-                    <div class="details">
-                        <div class="detail-item">
-                            <div>📧</div>
+                    <p>Be the first to experience the world's most secure digital identity wallet.</p>
+                    <div class="contact-details">
+                        <div class="detail-row">
+                            <i>📧</i>
                             <span>cotact.sahilraza@gmail.com</span>
                         </div>
-                        <div class="detail-item">
-                            <div>📍</div>
-                            <span>123/A, Salt Lake City, Sector V, Kolkata, WB</span>
+                        <div class="detail-row">
+                            <i>📍</i>
+                            <span>Sector V, Salt Lake City, Kolkata</span>
                         </div>
                     </div>
                 </div>
                 <div class="contact-action">
-                    <a href="mailto:cotact.sahilraza@gmail.com" class="cta-btn">Send an Email</a>
+                    <a href="mailto:cotact.sahilraza@gmail.com" class="cta-btn" style="padding: 24px 60px;">
+                        Contact Support
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
@@ -484,19 +550,14 @@
                 <a href="shipping-policy.html">Shipping Policy</a>
                 <a href="contact-us.html">Contact Us</a>
             </div>
-            <div style="margin-bottom: 20px; opacity: 0.8;">
+            <div class="footer-brand">
                 <p>&copy; 2024 SahilCodeLab. All rights reserved.</p>
-                <p style="font-size: 12px; margin-top: 5px;">PocketID is a trademark of SahilCodeLab. | Registered
-                    Office: Sector V, Salt Lake, Kolkata</p>
+                <p style="margin-top: 8px; opacity: 0.7;">PocketID &bull; A Product of SahilCodeLab</p>
             </div>
-            <p style="font-size: 11px; opacity: 0.5; max-width: 600px; margin: 0 auto; line-height: 1.4;">
-                Disclaimer: PocketID provides a secure vault for your documents. We do not store your private documents
-                on our servers. Users are responsible for maintaining the security of their devices and cloud backup
-                credentials.
+            <p class="disclaimer">
+                Disclaimer: PocketID provides a secure vault for your documents. We do not store your private documents on our servers. Users are responsible for maintaining the security of their devices and cloud credentials.
             </p>
         </div>
     </footer>
-
 </body>
-
 </html>
